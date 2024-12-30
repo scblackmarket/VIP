@@ -1,7 +1,7 @@
 #!/bin/bash
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
-echo "KONTOL Connected" > /etc/handeling >/dev/null 2>&1
+echo "SPS Server Connected" > /etc/handeling >/dev/null 2>&1
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IPVPS=$(curl -sS https://raw.githubusercontent.com/scblackmatket/izin/main/ip | grep $MYIP | awk '{print $4}')
