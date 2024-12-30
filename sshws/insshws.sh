@@ -61,11 +61,10 @@ else
     echo "Library 'requests' sudah terinstal untuk Python 3."
 fi
 
-# Link Hosting Kalian
-wget -O /usr/local/bin/ws "https://raw.githubusercontent.com/scblackmarket/VIP/main/sshws/ws"
-chmod +x /usr/local/bin/ws
+wget -O /usr/bin/ws "https://raw.githubusercontent.com/Garut-SisiLaut/vvip/main/files/ws"
+chmod +x /usr/bin/ws
 
-cat > /usr/local/bin/tun.conf << END
+cat > /usr/bin/tun.conf << END
 verbose: 1
 listen:
   - target_host: 127.0.0.1
@@ -90,7 +89,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/ws -f /usr/local/bin/tun.conf
+ExecStart=/usr/bin/ws -f /usr/bin/tun.conf
 Restart=on-failure
 
 [Install]
