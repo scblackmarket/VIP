@@ -4,7 +4,7 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 echo "SPS Server Connected" > /etc/handeling >/dev/null 2>&1
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS https://raw.githubusercontent.com/scblackmatket/izin/main/ip | grep $MYIP | awk '{print $4}')
+IPVPS=$(curl -sS https://raw.githubusercontent.com/scblackmarket/izin/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $MYIP == $IPVPS ]]; then
 domain
 Pasang
@@ -93,7 +93,7 @@ function key2(){
         hhari=$(date -d "1 days" +"%Y-%m-%d")
         mkdir /root/listip
         cd /root/listip
-        wget https://raw.githubusercontent.com/scblackmatket/izin/main/ip >/dev/null 2>&1
+        wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
         echo "### $author $hhari $MYIP @trial" >> ip
         sleep 1
         git config --global user.email "${EMAILGIT}" >/dev/null 2>&1
@@ -138,7 +138,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "30 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/scblackmatket/izin/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
 
 echo "### $author $hhari $MYIP @VIP" >> ip
 
@@ -171,7 +171,7 @@ USERGIT=$(cat /etc/github/username)
 hhari2=$(date -d "999 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/scblackmatket/izin/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
 
 sed -i "/# KONTOL/a ### ${author2} ${hhari2} ${MYIP2} ON 10 KONTOL" /root/listip/ip
 
@@ -204,7 +204,7 @@ USERGIT=$(cat /etc/github/username)
 hhari3=$(date -d "999 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/scblackmatket/izin/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
 
 sed -i "/# MEMEK/a ### ${author3} ${hhari3} ${MYIP3} ON 999" /root/listip/ip
 
@@ -256,7 +256,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/install/pointing.sh && chmod +x pointing.sh && ./pointing.sh
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/install/pointing.sh && chmod +x pointing.sh && ./pointing.sh
 clear
 }
 clear
@@ -517,7 +517,7 @@ lightcyan
 EOF
 function Pasang(){
 cd
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/tools.sh &> /dev/null
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/tools.sh &> /dev/null
 chmod +x tools.sh 
 bash tools.sh
 clear
@@ -572,42 +572,42 @@ fun_bar() {
 
 
 res2() {
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
 } 
 
 res3() {
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
 }
 
 res4() {
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 }
 
 res5() {
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
 }
 
 res6() {
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 clear
 }
 
 res7() {
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/menu/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/menu/update.sh && chmod +x update.sh && ./update.sh
 clear
 }
 
 res8() {
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
 clear
 }
 
 res9() {
-wget https://raw.githubusercontent.com/scblackmatket/VIP/main/install/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
+wget https://raw.githubusercontent.com/scblackmarket/VIP/main/install/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
 clear
 }
 if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
@@ -717,7 +717,7 @@ TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 MODEL2=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/scblackmatket/izin/main/ip | grep $MYIP | awk '{print $3}' )
+IZIN=$(curl -sS https://raw.githubusercontent.com/scblackmarket/izin/main/ip | grep $MYIP | awk '{print $3}' )
 d1=$(date -d "$IZIN" +%s)
 d2=$(date -d "$today" +%s)
 EXP=$(( (d1 - d2) / 86400 ))
@@ -797,7 +797,7 @@ if [ -f "/etc/afak.conf" ]; then
 rm /etc/afak.conf > /dev/null 2>&1
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/scblackmatket/VIP/main/versi  )
+serverV=$( curl -sS https://raw.githubusercontent.com/scblackmarket/VIP/main/versi  )
 echo $serverV > /opt/.ver
 echo "00" > /home/daily_reboot
 aureb=$(cat /home/daily_reboot)
