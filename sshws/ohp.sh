@@ -15,7 +15,7 @@ LIGHT='\033[0;37m'
 # Getting
 
 # Download File Ohp
- wget -O /usr/local/bin/ohpserver "https://raw.githubusercontent.com/scblackmatket/VIP/main/sshws/ohpserver"
+ wget -O /usr/local/bin/ohpserver "https://raw.githubusercontent.com/scblackmarket/VIP/main/sshws/ohpserver"
 chmod +x /usr/local/bin/ohpserver
 
 # Installing Service

@@ -62,7 +62,7 @@ else
 fi
 
 # Link Hosting Kalian
-wget -O /usr/local/bin/ws "https://raw.githubusercontent.com/scblackmatket/VIP/main/sshws/ws"
+wget -O /usr/local/bin/ws "https://raw.githubusercontent.com/scblackmarket/VIP/main/sshws/ws"
 chmod +x /usr/local/bin/ws
 
 # Installing Service
@@ -90,7 +90,7 @@ systemctl enable ws.service
 systemctl start ws.service
 systemctl restart ws.service
 
-wget -O /usr/local/bin/ws-ovpn "https://raw.githubusercontent.com/scblackmatket/VIP/main/sshws/ws"
+wget -O /usr/local/bin/ws-ovpn "https://raw.githubusercontent.com/scblackmarket/VIP/main/sshws/ws"
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
