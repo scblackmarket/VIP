@@ -65,6 +65,18 @@ fi
 wget -O /usr/local/bin/ws "https://raw.githubusercontent.com/scblackmarket/VIP/main/sshws/ws"
 chmod +x /usr/local/bin/ws
 
+cat > /usr/local/bin/tun.conf << END
+verbose: 1
+listen:
+  - target_host: 127.0.0.1
+    target_port: 109
+    listen_port: 10015
+
+  - target_host: 127.0.0.1
+    target_port: 1194
+    listen_port: 10012
+END
+
 # Installing Service
 cat > /etc/systemd/system/ws.service << END
 [Unit]
@@ -78,7 +90,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/ws
+ExecStart=/usr/local/bin/ws -f /usr/local/bin/tun.conf
 Restart=on-failure
 
 [Install]
