@@ -1,7 +1,7 @@
 #!/bin/bash
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
-echo "SPS Server Connected" > /etc/handeling >/dev/null 2>&1
+echo "Server Connected" > /etc/handeling >/dev/null 2>&1
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IPVPS=$(curl -sS https://raw.githubusercontent.com/scblackmarket/izin/main/ip | grep $MYIP | awk '{print $4}')
@@ -17,6 +17,8 @@ fi
 clear
 red='\e[1;31m'
 green='\e[0;32m'
+berem='\033[96;1m'
+bgberem='\e[92;1m'
 yell='\e[1;33m'
 tyblue='\e[1;36m'
 NC='\033[0m'
@@ -47,9 +49,9 @@ mkdir -p /etc/xray
 mkdir -p /var/lib/ >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
 clear
-echo -e  "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${green}│              MASUKKAN NAMA KAMU          │${NC}"
-echo -e  "${green}└──────────────────────────────────────────┘${NC}"
+echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e  "${berem}│\e[92;1m              MASUKKAN NAMA KAMU          \033[96;1m│${NC}"
+echo -e  "${berem}└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $name =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan Nama Kamu Disini tanpa spasi : " -e name
@@ -64,15 +66,15 @@ echo ""
 function key2(){
     [[ ! -f /usr/bin/git ]] && apt install git -y &> /dev/null
     clear
-    echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-    echo -e "${green}│ \033[1;37mPlease select your choice              ${green}│${NC}"
-    echo -e "${green}└──────────────────────────────────────────┘${NC}"
-    echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-    echo -e "${green}│  [ 1 ]  \033[1;37mTRIAL 1 HARI      ${NC}"
-    echo -e "${green}│  "                                        
-    echo -e "${green}│  [ 2 ]  \033[1;37mMEMBER SUDAH BELI     ${NC}"
-    echo -e "${green}│     "                                     
-    echo -e "${green}└──────────────────────────────────────────┘${NC}"
+    echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+    echo -e "${berem}│ \e[92;1mPlease select your choice              ${berem}│${NC}"
+    echo -e "${berem}└──────────────────────────────────────────┘${NC}"
+    echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+    echo -e "${berem}│  [ 1 ]  \033[1;37mTRIAL 1 HARI      ${NC}"
+    echo -e "${berem}│  "                                        
+    echo -e "${berem}│  [ 2 ]  \033[1;37mMEMBER SUDAH BELI     ${NC}"
+    echo -e "${berem}│     "                                     
+    echo -e "${berem}└──────────────────────────────────────────┘${NC}"
     
     until [[ $key =~ ^[12]+$ ]]; do 
         read -p "   Please select numbers 1 atau 2 : " key
@@ -112,9 +114,9 @@ function key2(){
 
 if [[ $key == "2" ]]; then
 clear
-echo -e  "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${green}│              MASUKKAN LICENSE KEY        │${NC}"
-echo -e  "${green}└──────────────────────────────────────────┘${NC}"
+echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e  "${berem}│\e[92;1m              MASUKKAN LICENSE KEY        \033[96;1m│${NC}"
+echo -e  "${berem}└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $kode =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan Nama Kamu Disini tanpa spasi : " -e kode
@@ -123,7 +125,7 @@ if [ -z $kode ]; then
 echo -e "KODE SALAH SILAHKAN MASUKKAN ULANG KODENYA"
 key2
 cd
-elif [[ $kode == "NBVIP" ]]; then
+elif [[ $kode == "KONTOL" ]]; then
 MYIP=$(curl -sS ipv4.icanhazip.com)
 if [[ ! -d /etc/github ]]; then
 mkdir -p /etc/github
@@ -261,24 +263,24 @@ clear
 }
 clear
 cd
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│ \033[1;37mPlease select a your Choice to Set Domain${green}│${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│  [ 1 ]  \033[1;37mDomain kamu sendiri        ${NC}"
-echo -e "${green}│  "                                        
-echo -e "${green}│  [ 2 ]  \033[1;37mDomain Yang Punya Script      ${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│ \e[92;1mPlease select a your Choice to Set Domain${berem}│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│  [ 1 ]  \033[1;37mDomain kamu sendiri        ${NC}"
+echo -e "${berem}│  "                                        
+echo -e "${berem}│  [ 2 ]  \033[1;37mDomain Yang Punya Script      ${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 until [[ $domain =~ ^[132]+$ ]]; do 
 read -p "   Please select numbers 1  atau 2 : " domain
 done
 if [[ $domain == "1" ]]; then
 clear
-echo -e  "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${green}│              \033[1;37mTERIMA KASIH                ${green}│${NC}"
-echo -e  "${green}│         \033[1;37mSUDAH MENGGUNAKAN SCRIPT         ${green}│${NC}"
-echo -e  "${green}│                \033[1;37mDARI SAYA                 ${green}│${NC}"
-echo -e  "${green}└──────────────────────────────────────────┘${NC}"
+echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e  "${berem}│              \033[1;37mTERIMA KASIH                ${berem}│${NC}"
+echo -e  "${berem}│         \033[1;37mSUDAH MENGGUNAKAN SCRIPT         ${berem}│${NC}"
+echo -e  "${berem}│                \033[1;37mDARI SAYA                 ${berem}│${NC}"
+echo -e  "${berem}└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dnss =~ ^[a-zA-Z0-9_.-]+$ ]]; do 
 read -rp "Masukan domain kamu Disini : " -e dnss
@@ -306,25 +308,25 @@ clear
 fi
 if [[ $domain == "2" ]]; then
 clear
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│ \033[1;37mPlease select a your Choice to Set Domain${green}│${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│  [ 1 ]  \033[1;37mDomain xxx.kontol.store          ${NC}"
-echo -e "${green}│  [ 2 ]  \033[1;37mDomain xxx.memek.my.id          ${NC}"
-echo -e "${green}│  [ 3 ]  \033[1;37mDomain xxx.kopi.biz.id          ${NC}"
-echo -e "${green}│  [ 4 ]  \033[1;37mDomain xxx.susu.engineer          ${NC}"                                        
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│ \e[92;1mPlease select a your Choice to Set Domain${berem}│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│  [ 1 ]  \033[1;37mDomain xxx.kontol.store          ${NC}"
+echo -e "${berem}│  [ 2 ]  \033[1;37mDomain xxx.memek.my.id          ${NC}"
+echo -e "${berem}│  [ 3 ]  \033[1;37mDomain xxx.kopi.biz.id          ${NC}"
+echo -e "${berem}│  [ 4 ]  \033[1;37mDomain xxx.susu.engineer          ${NC}"                                        
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 until [[ $domain2 =~ ^[1-4]+$ ]]; do 
 read -p "   Please select numbers 1 sampai 4 : " domain2
 done
 fi
 if [[ $domain2 == "1" ]]; then
 clear
-echo -e  "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${green}│  \033[1;37mContoh subdomain xxx.kontol.store        ${green}│${NC}"
-echo -e  "${green}│    \033[1;37mxxx jadi subdomain kamu               ${green}│${NC}"
-echo -e  "${green}└──────────────────────────────────────────┘${NC}"
+echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e  "${berem}│  \033[1;37mContoh subdomain xxx.kontol.store        ${berem}│${NC}"
+echo -e  "${berem}│    \033[1;37mxxx jadi subdomain kamu               ${berem}│${NC}"
+echo -e  "${berem}└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn1 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn1
@@ -356,10 +358,10 @@ clear
 rm /root/subdomainx
 elif [[ $domain2 == "2" ]]; then
 clear
-echo -e  "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${green}│  \033[1;37mContoh subdomain xxx.memek.my.id        ${green}│${NC}"
-echo -e  "${green}│    \033[1;37mxxx jadi subdomain kamu               ${green}│${NC}"
-echo -e  "${green}└──────────────────────────────────────────┘${NC}"
+echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e  "${berem}│  \033[1;37mContoh subdomain xxx.memek.my.id        ${berem}│${NC}"
+echo -e  "${berem}│    \033[1;37mxxx jadi subdomain kamu               ${berem}│${NC}"
+echo -e  "${berem}└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn2 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn2
@@ -389,10 +391,10 @@ fun_bar 'res1'
 clear
 elif [[ $domain2 == "3" ]]; then
 clear
-echo -e  "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${green}│  \033[1;37mContoh subdomain xxx.kopi.biz.id         ${green}│${NC}"
-echo -e  "${green}│    \033[1;37mxxx jadi subdomain kamu               ${green}│${NC}"
-echo -e  "${green}└──────────────────────────────────────────┘${NC}"
+echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e  "${berem}│  \033[1;37mContoh subdomain xxx.kopi.biz.id         ${berem}│${NC}"
+echo -e  "${berem}│    \033[1;37mxxx jadi subdomain kamu               ${berem}│${NC}"
+echo -e  "${berem}└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn3 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn3
@@ -423,10 +425,10 @@ clear
 rm /root/subdomainx
 elif [[ $domain2 == "4" ]]; then
 clear
-echo -e  "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${green}│  \033[1;37mContoh subdomain xxx.susu.engineer  ${green}│${NC}"
-echo -e  "${green}│    \033[1;37mxxx jadi subdomain kamu               ${green}│${NC}"
-echo -e  "${green}└──────────────────────────────────────────┘${NC}"
+echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e  "${berem}│  \033[1;37mContoh subdomain xxx.susu.engineer  ${berem}│${NC}"
+echo -e  "${berem}│    \033[1;37mxxx jadi subdomain kamu               ${berem}│${NC}"
+echo -e  "${berem}└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn4 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn4
@@ -611,97 +613,97 @@ wget https://raw.githubusercontent.com/scblackmarket/VIP/main/install/udp-custom
 clear
 }
 if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
-echo -e "${green}Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${NC}"
+echo -e "${berem}Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${NC}"
 setup_ubuntu
 elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "debian" ]]; then
-echo -e "${green}Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${NC}"
+echo -e "${berem}Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${NC}"
 setup_debian
 else
 echo -e " Your OS Is Not Supported ( ${YELLOW}$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${FONT} )"
 fi
 }
 function setup_debian(){
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│      PROCESS INSTALLED SSH & OPENVPN     │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│      PROCESS INSTALLED SSH & OPENVPN     │${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res2'
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           PROCESS INSTALLED XRAY         │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           PROCESS INSTALLED XRAY         \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res3'
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│       PROCESS INSTALLED WEBSOCKET SSH    │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m       PROCESS INSTALLED WEBSOCKET SSH    \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res4'
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│       PROCESS INSTALLED BACKUP MENU      │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m       PROCESS INSTALLED BACKUP MENU      \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res5'
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           PROCESS INSTALLED OHP          │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           PROCESS INSTALLED OHP          \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res6'
 
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           DOWNLOAD EXTRA MENU            │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           DOWNLOAD EXTRA MENU            \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res7'
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           DOWNLOAD SYSTEM                │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           DOWNLOAD SYSTEM                \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res8'
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           DOWNLOAD UDP COSTUM            │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           DOWNLOAD UDP COSTUM            \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res9'
 }
 function setup_ubuntu(){
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│      PROCESS INSTALLED SSH & OPENVPN     │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m      PROCESS INSTALLED SSH & OPENVPN     \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 res2
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           PROCESS INSTALLED XRAY         │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           PROCESS INSTALLED XRAY         \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 res3
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│       PROCESS INSTALLED WEBSOCKET SSH    │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m       PROCESS INSTALLED WEBSOCKET SSH    \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 res4
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│       PROCESS INSTALLED BACKUP MENU      │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m       PROCESS INSTALLED BACKUP MENU      \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 res5
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           PROCESS INSTALLED OHP          │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           PROCESS INSTALLED OHP          \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 res6
 
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           DOWNLOAD EXTRA MENU            │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           DOWNLOAD EXTRA MENU            \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 res7
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           DOWNLOAD SYSTEM                │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           DOWNLOAD SYSTEM                \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 res8
 
-echo -e "${green}┌──────────────────────────────────────────┐${NC}"
-echo -e "${green}│           DOWNLOAD UDP COSTUM            │${NC}"
-echo -e "${green}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m           DOWNLOAD UDP COSTUM            \033[96;1m│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 res9
 }
 function iinfo(){
@@ -828,9 +830,9 @@ sleep 3
 echo  ""
 cd
 iinfo
-echo -e "${green}┌────────────────────────────────────────────┐${NC}"
-echo -e "${green}│  Install SCRIPT SELESAI..                  │${NC}"
-echo -e "${green}└────────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌────────────────────────────────────────────┐${NC}"
+echo -e "${berem}│\e[92;1m  Install SCRIPT SELESAI..                  \033[96;1m│${NC}"
+echo -e "${berem}└────────────────────────────────────────────┘${NC}"
 echo  ""
 sleep 4
 echo -e "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "
