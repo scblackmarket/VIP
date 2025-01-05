@@ -813,7 +813,7 @@ curl -sS ifconfig.me > /etc/myipvps
 curl -s ipinfo.io/city?token=75082b4831f909 >> /etc/xray/city
 curl -s ipinfo.io/org?token=75082b4831f909  | cut -d " " -f 2-10 >> /etc/xray/isp
 rm /root/tools.sh >/dev/null 2>&1
-rm /root/start.sh >/dev/null 2>&1
+rm /root/setup.sh >/dev/null 2>&1
 rm /root/pointing.sh >/dev/null 2>&1
 rm /root/ssh-vpn.sh >/dev/null 2>&1
 rm /root/ins-xray.sh >/dev/null 2>&1
@@ -822,6 +822,7 @@ rm /root/set-br.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
 rm /root/installsl.sh >/dev/null 2>&1
+rm /root/setrsyslog.sh >/dev/null 2>&1
 rm /root/udp-custom.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 sleep 3
