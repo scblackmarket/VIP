@@ -64,54 +64,52 @@ echo ""
 echo ""
 
 function key2(){
-    [[ ! -f /usr/bin/git ]] && apt install git -y &> /dev/null
-    clear
-    echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
-    echo -e "${berem}│ \e[92;1mPlease select your choice              ${berem}│${NC}"
-    echo -e "${berem}└──────────────────────────────────────────┘${NC}"
-    echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
-    echo -e "${berem}│  [ 1 ]  \033[1;37mTRIAL 1 HARI      ${NC}"
-    echo -e "${berem}│  "                                        
-    echo -e "${berem}│  [ 2 ]  \033[1;37mMEMBER SUDAH BELI     ${NC}"
-    echo -e "${berem}│     "                                     
-    echo -e "${berem}└──────────────────────────────────────────┘${NC}"
-    
-    until [[ $key =~ ^[12]+$ ]]; do 
-        read -p "   Please select numbers 1 atau 2 : " key
-    done
+[[ ! -f /usr/bin/git ]] && apt install git -y &> /dev/null
+clear
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│ \e[92;1mPlease select your choice              ${berem}│${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│  [ 1 ]  \033[1;37mTRIAL 1 HARI      ${NC}"
+echo -e "${berem}│  "                                        
+echo -e "${berem}│  [ 2 ]  \033[1;37mMEMBER SUDAH BELI     ${NC}"
+echo -e "${berem}│     "                                     
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 
-    if [[ $key == "1" ]]; then
-        MYIP=$(curl -sS ipv4.icanhazip.com)
-        if [[ ! -d /etc/github ]]; then
-            mkdir -p /etc/github
-        fi
-        curl -s https://pastebin.com/raw/3qN3Fhg2 > /etc/github/api
-        curl -s https://pastebin.com/raw/b12yMYAZ > /etc/github/email
-        curl -s https://pastebin.com/raw/2CWNbVhe > /etc/github/username
-        clear
-        APIGIT=$(cat /etc/github/api)
-        EMAILGIT=$(cat /etc/github/email)
-        USERGIT=$(cat /etc/github/username)
-        hhari=$(date -d "1 days" +"%Y-%m-%d")
-        mkdir /root/listip
-        cd /root/listip
-        wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
-        echo "### $author $hhari $MYIP @trial" >> ip
-        sleep 1
-        git config --global user.email "${EMAILGIT}" >/dev/null 2>&1
-        git config --global user.name "${USERGIT}" >/dev/null 2>&1
-        git init >/dev/null 2>&1
-        git add ip
-        git commit -m register >/dev/null 2>&1
-        git branch -M main >/dev/null 2>&1
-        git remote add origin https://github.com/${USERGIT}/izin >/dev/null 2>&1
-        git push -f https://${APIGIT}@github.com/${USERGIT}/izin >/dev/null 2>&1
-        sleep 1
-        cd
-        rm -rf /root/listip
-        clear
-    fi
-
+until [[ $key =~ ^[12]+$ ]]; do 
+read -p "   Please select numbers 1 atau 2 : " key
+done
+if [[ $key == "1" ]]; then
+MYIP=$(curl -sS ipv4.icanhazip.com)
+if [[ ! -d /etc/github ]]; then
+    mkdir -p /etc/github
+fi
+curl -s https://pastebin.com/raw/3qN3Fhg2 > /etc/github/api
+curl -s https://pastebin.com/raw/b12yMYAZ > /etc/github/email
+curl -s https://pastebin.com/raw/2CWNbVhe > /etc/github/username
+clear
+APIGIT=$(cat /etc/github/api)
+EMAILGIT=$(cat /etc/github/email)
+USERGIT=$(cat /etc/github/username)
+hhari=$(date -d "1 days" +"%Y-%m-%d")
+mkdir /root/listip
+cd /root/listip
+wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
+echo "### $author $hhari $MYIP @trial" >> ip
+sleep 1
+git config --global user.email "${EMAILGIT}" >/dev/null 2>&1
+git config --global user.name "${USERGIT}" >/dev/null 2>&1
+git init >/dev/null 2>&1
+git add ip
+git commit -m register >/dev/null 2>&1
+git branch -M main >/dev/null 2>&1
+git remote add origin https://github.com/${USERGIT}/izin >/dev/null 2>&1
+git push -f https://${APIGIT}@github.com/${USERGIT}/izin >/dev/null 2>&1
+sleep 1
+cd
+rm -rf /root/listip
+clear
+fi
 if [[ $key == "2" ]]; then
 clear
 echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
