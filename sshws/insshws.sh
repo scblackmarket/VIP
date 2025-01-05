@@ -79,8 +79,8 @@ END
 # Installing Service
 cat > /etc/systemd/system/ws.service << END
 [Unit]
-Description=Proxy Mod By ADIJAYA TUNNELING 
-Documentation=https://t.me/ADJstoreVpn
+Description=Proxy Mod By memek 
+Documentation=https://t.me/memek
 After=network.target nss-lookup.target
 
 [Service]
@@ -107,8 +107,8 @@ chmod +x /usr/local/bin/ws-ovpn
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
-Description=Proxy Mod By ADIJAYA TUNNELING
-Documentation=https://t.me/ADJstoreVpn
+Description=Proxy Mod By NEWBIE STORE
+Documentation=https://t.me/memek
 After=network.target nss-lookup.target
 
 [Service]
