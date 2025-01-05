@@ -12,10 +12,8 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 REPO="https://raw.githubusercontent.com/scblackmarket/vip/main/"
-echo -e "
-"
 date
-echo ""
+
 cd
 if [[ -e /etc/xray/domain ]]; then
 domain=$(cat /etc/xray/domain)
@@ -52,6 +50,7 @@ sleep 0.5
 echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
 domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
 chown www-data.www-data $domainSock_dir
+
 # Make Folder XRay
 mkdir -p /var/log/xray
 mkdir -p /etc/xray
@@ -87,8 +86,6 @@ chmod +x /usr/local/bin/ssl_renew.sh
 if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo "15 03 */3 * * /usr/local/bin/ssl_renew.sh") | crontab;fi
 
 mkdir -p /home/vps/public_html
-
-# set uuid
 # set uuid
 uuid=$(cat /proc/sys/kernel/random/uuid)
 # xray config
@@ -347,7 +344,8 @@ cat > /etc/xray/config.json << END
 END
 rm -rf /etc/systemd/system/xray.service.d
 rm -rf /etc/systemd/system/xray@.service
-cat <<EOF> /etc/systemd/system/xray.service
+
+cat > /etc/systemd/system/xray.service << END
 Description=Xray Service
 Documentation=https://github.com/xtls
 After=network.target nss-lookup.target
@@ -365,9 +363,9 @@ LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
+END
 
-EOF
-cat > /etc/systemd/system/runn.service <<EOF
+cat > /etc/systemd/system/runn.service << END
 [Unit]
 Description=casper9
 After=network.target
@@ -380,7 +378,7 @@ Restart=on-abort
 
 [Install]
 WantedBy=multi-user.target
-EOF
+END
 
 #nginx config
 wget -O /etc/nginx/conf.d/xray.conf "${REPO}install/xray.conf"
@@ -392,6 +390,7 @@ echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
 sleep 0.5
 echo -e "[ ${green}ok${NC} ] Enable & restart xray "
+
 systemctl daemon-reload
 systemctl enable xray
 systemctl restart xray
