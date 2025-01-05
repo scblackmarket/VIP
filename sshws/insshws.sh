@@ -14,8 +14,6 @@ else
     echo "$cipher_line" >> $sshd_config
     echo "Baris cipher telah ditambahkan ke $sshd_config."
 fi
-systemctl reload ssh sshd
-systemctl stop ws ws-ovpn
 file_path="/etc/handeling"
 
 # Cek apakah file ada
@@ -79,8 +77,8 @@ END
 # Installing Service
 cat > /etc/systemd/system/ws.service << END
 [Unit]
-Description=Proxy Mod By memek 
-Documentation=https://t.me/memek
+Description=Proxy Mod By ADIJAYA TUNNELING 
+Documentation=https://t.me/ADJstoreVpn
 After=network.target nss-lookup.target
 
 [Service]
@@ -107,8 +105,8 @@ chmod +x /usr/local/bin/ws-ovpn
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
-Description=Proxy Mod By NEWBIE STORE
-Documentation=https://t.me/memek
+Description=Proxy Mod By ADIJAYA TUNNELING
+Documentation=https://t.me/ADJstoreVpn
 After=network.target nss-lookup.target
 
 [Service]
