@@ -4,7 +4,7 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 echo "Server Connected" > /etc/handeling >/dev/null 2>&1
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS https://raw.githubusercontent.com/scblackmarket/izin/main/ip | grep $MYIP | awk '{print $4}')
+IPVPS=$(curl -sS https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $MYIP == $IPVPS ]]; then
 domain
 Pasang
@@ -94,7 +94,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "1 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip >/dev/null 2>&1
 echo "### $author $hhari $MYIP @trial" >> ip
 sleep 1
 git config --global user.email "${EMAILGIT}" >/dev/null 2>&1
@@ -138,7 +138,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "30 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip >/dev/null 2>&1
 
 echo "### $author $hhari $MYIP @VIP" >> ip
 
@@ -171,7 +171,7 @@ USERGIT=$(cat /etc/github/username)
 hhari2=$(date -d "999 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip >/dev/null 2>&1
 
 sed -i "/# KONTOL/a ### ${author2} ${hhari2} ${MYIP2} ON 10 KONTOL" /root/listip/ip
 
@@ -204,7 +204,7 @@ USERGIT=$(cat /etc/github/username)
 hhari3=$(date -d "999 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/scblackmarket/izin/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip >/dev/null 2>&1
 
 sed -i "/# MEMEK/a ### ${author3} ${hhari3} ${MYIP3} ON 999" /root/listip/ip
 
@@ -717,7 +717,7 @@ TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 MODEL2=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/scblackmarket/izin/main/ip | grep $MYIP | awk '{print $3}' )
+IZIN=$(curl -sS https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip | grep $MYIP | awk '{print $3}' )
 d1=$(date -d "$IZIN" +%s)
 d2=$(date -d "$today" +%s)
 EXP=$(( (d1 - d2) / 86400 ))
