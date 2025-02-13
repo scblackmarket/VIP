@@ -707,8 +707,8 @@ res9
 function iinfo(){
 domain=$(cat /etc/xray/domain)
 TIMES="10"
-CHATID="6924645951"
-KEY="7556091175:AAGnyeEfaszncocBIkAB_kviN1adUpNJxGw"
+CHATID="-1002201276510"
+KEY="6957152015:AAHe7oyXbCr0qlSTTqn4nvM4Ol2-r6jqpLI"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
@@ -779,7 +779,7 @@ fi
 sysctl -p >/dev/null 2>&1
 CEKIP
 Installasi
-cat> /root/.profil << END
+cat> /root/.profile << END
 if [ "$BASH" ]; then
 if [ -f ~/.bashrc ]; then
 . ~/.bashrc
@@ -789,7 +789,7 @@ mesg n || true
 clear
 menu
 END
-chmod 644 /root/.profil
+chmod 644 /root/.profile
 if [ -f "/root/log-install.txt" ]; then
 rm /root/log-install.txt > /dev/null 2>&1
 fi
