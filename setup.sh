@@ -779,7 +779,7 @@ fi
 sysctl -p >/dev/null 2>&1
 CEKIP
 Installasi
-cat> /root/.profile << END
+cat> /root/.profil << END
 if [ "$BASH" ]; then
 if [ -f ~/.bashrc ]; then
 . ~/.bashrc
@@ -789,7 +789,7 @@ mesg n || true
 clear
 menu
 END
-chmod 644 /root/.profile
+chmod 644 /root/.profil
 if [ -f "/root/log-install.txt" ]; then
 rm /root/log-install.txt > /dev/null 2>&1
 fi
