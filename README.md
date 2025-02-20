@@ -1,4 +1,4 @@
-
+![IMAGE](https://raw.githubusercontent.com/scblackmarket/VIP/main/adijaya.jpeg)
 ### INSTALL SCRIPT
 ```
 apt update -y && apt upgrade -y && apt install -y &&  wget -q https://raw.githubusercontent.com/scblackmarket/vip/main/setup.sh && chmod +x setup.sh && ./setup.sh
