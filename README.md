@@ -1,4 +1,5 @@
-(https://raw.githubusercontent.com/scblackmarket/VIP/main/adijaya.jpeg)
+![IMAGE](https://raw.githubusercontent.com/scblackmarket/vip/main/adijaya.jpeg)
+
 
 ### INSTALL SCRIPT
 ```
