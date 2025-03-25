@@ -3,7 +3,7 @@ REPO="https://raw.githubusercontent.com/scblackmarket/vip/main/"
 apt install rclone
 printf "q\n" | rclone config
 wget -O /root/.config/rclone/rclone.conf "${REPO}install/rclone.conf"
-git clone  https://github.com/casper9/wondershaper.git
+git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
 make install
 cd
